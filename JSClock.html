@@ -1,0 +1,154 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width ,initial-scale=1">
+
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>    
+    
+<link rel="icon" href="../../ImagesforCSS/images%20(2).png">
+<title>Pure JS Clock</title>
+    
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #333;
+        }
+
+        #clockcont{
+            position: relative;
+            margin: auto;
+          
+           width: 40vw;
+            height: 40vw;
+           background: url(f936c5a35c35c3f4d7c498fb8edad0f1.png) no-repeat; 
+           background-size: 100%;    
+        
+        }
+        
+        #hour,#minute,#second{
+            
+            position: absolute;
+            background: black;
+            border-radius: 10px;
+          transform-origin: bottom;
+        }
+        
+        #hour{
+            width: 1.8%;
+            height: 25%;
+            top: 25%;
+            left: 49.5%;
+          background-color: orange;
+            
+        }
+        #minute{
+             width: 1.6%;
+            height: 30%;
+            top: 19%;
+            left: 49.1%;
+          background-color: white;
+            
+            
+        }
+        #second{
+             width: 1%;
+            height: 40%;
+            top: 9%;
+            left: 49.5%;
+         background-color: green;
+         
+        }
+        
+        
+        
+        
+        
+        
+    
+    
+    
+    </style>
+    
+    
+    
+    
+</head>
+    
+<body>
+    
+    <div id="clockcont">
+        
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+        
+    </div>
+    
+   
+    
+    
+    
+  <script>
+    
+        function clk(){
+        var hour = document.getElementById("hour");
+        
+         var minute = document.getElementById("minute");
+        
+         var second = document.getElementById("second");
+        
+        
+        
+        
+    setInterval(() =>{
+        
+        d = new Date();
+        htime = d.getHours();
+        mtime = d.getMinutes();
+        stime = d.getSeconds();
+        
+   hrotation = 30*htime+mtime/2;      
+   mrotation =  6*mtime;      
+   srotation =   6*stime;     
+        
+        hour.style.transform = `rotate(${hrotation}deg)`;
+        
+        
+         minute.style.transform = `rotate(${mrotation}deg)`;
+        
+         second.style.transform = `rotate(${srotation}deg)`;
+        
+        
+        console.log("JS");
+     
+        
+    },1000);
+    
+            
+    
+        }
+    clk();
+     
+      
+    </script>  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+</html>
